@@ -1,0 +1,11 @@
+LESSONLAB - START HERE
+
+1. Extract this ZIP to a folder.
+2. Double-click START-APP.cmd. The first run downloads the app packages; allow it to finish.
+3. Open http://localhost:3000 in your browser and create a teacher account.
+
+This ZIP keeps .env.local out because it contains private credentials. On this computer, START-APP.cmd copies your existing local settings from Downloads\teacher-activity-builder\teacher-activity-builder\.env.local when available. On another computer, edit the new .env.local and add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.
+
+If the Supabase database has not been set up yet, open your Supabase project, go to SQL Editor, and run supabase\schema.sql once. Login and saving activities need Supabase. The app uses FAKE_MODE=true, so it shows sample content and does not need an AI key. For real AI generation, set FAKE_MODE=false, add ANTHROPIC_API_KEY to .env.local, and restart the app.
+
+This launcher runs the local development server. It does not publish the app to the internet. To deploy, connect the project to a hosting service and configure the same environment variables there.
