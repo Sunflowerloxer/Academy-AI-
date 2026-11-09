@@ -1,0 +1,2 @@
+import {createPublicClient} from '@/lib/supabase/server';import PlayActivity from '@/components/PlayActivity';import {notFound} from 'next/navigation';
+export default async function PublicActivity({params}:{params:Promise<{id:string}>}){const {id}=await params;try{const s=createPublicClient();const {data}=await s.from('activities').select('content').eq('id',id).single();if(!data?.content)notFound();return <PlayActivity activity={data.content}/>}catch{notFound()}}
